@@ -1,0 +1,16 @@
+{% extends 'Nlp/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<h2>{{title}}</h2>
+
+<form action="{% url 'add' %}" method="post">
+    {% csrf_token %}
+<table><tr><td>
+            {{form.text}}
+</td></tr>
+    <tr><td>
+    <button type="submit" name="sub" value="Додати">Додати</button>
+      <button type="submit" name="rec" value="Записати">Записати</button>
+   </td> </tr></table>
+</form>
+{% endblock %}
